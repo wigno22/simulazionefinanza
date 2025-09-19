@@ -1,15 +1,16 @@
+// src/app/app.component.ts (CORRETTO)
+
 import { Component } from '@angular/core';
-import { StockListComponent } from './components/stock-list/stock-list.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [StockListComponent, PortfolioComponent],
-  template: `
-    <h1>TEST ROOT COMPONENT</h1>
-    <stock-list></stock-list>
-    <portfolio></portfolio>
-  `
+  imports: [CommonModule, RouterOutlet],
+  // Usa un template inline che contiene solo il router-outlet
+  template: '<router-outlet></router-outlet>'
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'simulazionefinanza';
+}
