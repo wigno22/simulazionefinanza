@@ -1,0 +1,21 @@
+<h2>Portafoglio</h2>
+
+<div *ngIf="portfolio; else noPortfolio">
+  <p>Utente: {{ portfolio.username }}</p>
+  <p>Saldo: {{ portfolio.balance | currency:'EUR' }}</p>
+
+  <table border="1" cellpadding="5" *ngIf="portfolio.positions.length > 0">
+    <tr>
+      <th>ID Azione</th>
+      <th>Quantità</th>
+    </tr>
+    <tr *ngFor="let pos of portfolio.positions">
+      <td>{{ pos.stockId }}</td>
+      <td>{{ pos.quantity }}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #noPortfolio>
+  <p>Nessun portafoglio disponibile.</p>
+</ng-template>

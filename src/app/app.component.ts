@@ -7,7 +7,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
   standalone: true,
   imports: [StockListComponent, PortfolioComponent],
   template: `
-    <h1>Simulatore di Mercato</h1>
+    <h1>TEST ROOT COMPONENT</h1>
     <stock-list></stock-list>
     <portfolio></portfolio>
   `

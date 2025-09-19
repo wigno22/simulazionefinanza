@@ -1,0 +1,16 @@
+<h2>Lista Azioni</h2>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Nome</th>
+    <th>Prezzo</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let stock of stocks">
+    <td>{{ stock.name }}</td>
+    <td>{{ stock.price | currency:'EUR' }}</td>
+    <td>
+      <button (click)="buy(stock)">Compra</button>
+      <button (click)="sell(stock)">Vendi</button>
+    </td>
+  </tr>
+</table>
